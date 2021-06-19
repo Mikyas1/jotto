@@ -17,7 +17,9 @@ class Input extends Component {
           data-test="submit-button"
           type="submit"
           className="btn btn-primary mb-2"
-        ></button>
+        >
+          Submit
+        </button>
       </form>
     );
     return <div data-test="component-input">{content}</div>;
