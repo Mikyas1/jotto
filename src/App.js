@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 
 import GuessedWords from './GuessedWords';
 import Congrats from './Congrats';
+import { getSecretWord } from './actions';
 
 class App extends Component {
   render() {
@@ -18,4 +20,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = ({ success, guessedWords }) => {
+  return {
+    success,
+    guessedWords,
+  };
+};
+
+export default connect(mapStateToProps, { getSecretWord })(App);
