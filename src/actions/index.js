@@ -29,11 +29,17 @@ export const guessWord = (guessedWord) => {
 
 export const getSecretWord = () => {
   return async (dispatch, getState) => {
-    const response = await axios.get('http://localhost:3030');
-
-    dispatch({
-      type: actionTypes.SET_SECRET_WORD,
-      payload: response.data,
-    });
+    try {
+      const response = await axios.get('http://localhost:3030');
+      dispatch({
+        type: actionTypes.SET_SECRET_WORD,
+        payload: response.data,
+      });
+    } catch {
+      dispatch({
+        type: actionTypes.SET_SECRET_WORD,
+        payload: 'party',
+      });
+    }
   };
 };

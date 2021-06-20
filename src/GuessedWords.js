@@ -12,7 +12,7 @@ const GuessedWords = (props) => {
       return (
         <tr data-test="guessed-word" key={index}>
           <td>{word.guessedWord}</td>
-          <td>{word.letterMatchCount}</td>
+          <td>{word.lettersMatchedCount}</td>
         </tr>
       );
     });

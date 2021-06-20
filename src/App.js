@@ -12,7 +12,7 @@ export class UnconnectedApp extends Component {
    * @method componentDidMount
    * @returns {undefined}
    */
-  componentDidCatch() {
+  componentDidMount() {
     // get the secret word-guess
     this.props.getSecretWord();
   }
